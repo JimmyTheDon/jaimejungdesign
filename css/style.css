@@ -1,0 +1,156 @@
+@import url("http://fast.fonts.net/t/1.css?apiType=css&projectid=27dee1f3-4e28-4949-831d-66f710a99fc3");
+    @font-face{
+        font-family:"DINLight";
+        src:url("../assets/fonts/fb0dd5e6-cf57-43be-8f3f-2880d5389694.eot?#iefix");
+        src:url("../assets/fonts/fb0dd5e6-cf57-43be-8f3f-2880d5389694.eot?#iefix") format("eot"),url("../assets/fonts/14aba99e-8c97-4daa-a8df-67920a051402.woff2") format("woff2"),url("../assets/fonts/96fd6d6f-fad6-4dd9-ab70-29547a56cacd.woff") format("woff"),url("../assets/fonts/cdc1c0e4-213b-4a01-a1dc-af6dddf2263a.ttf") format("truetype");
+    }
+    @font-face{
+        font-family:"DINRegular";
+        src:url("../assets/fonts/0b225f3f-72f4-4de2-878c-b97212892231.eot?#iefix");
+        src:url("../assets/fonts/0b225f3f-72f4-4de2-878c-b97212892231.eot?#iefix") format("eot"),url("../assets/fonts/86213c25-c304-41be-8e81-eb0091ce7add.woff2") format("woff2"),url("../assets/fonts/7353a35c-537a-46d5-b63a-d82b4353563a.woff") format("woff"),url("../assets/fonts/a896dbce-3a69-4969-b2c4-99abd2ee995b.ttf") format("truetype");
+    }
+    @font-face{
+        font-family:"DINBold";
+        src:url("../assets/fonts/fa5ed46b-792d-4f47-894e-fa587cf4e1cf.eot?#iefix");
+        src:url("../assets/fonts/fa5ed46b-792d-4f47-894e-fa587cf4e1cf.eot?#iefix") format("eot"),url("../assets/fonts/03008527-67bd-478e-98e3-3b56dd9a6520.woff2") format("woff2"),url("../assets/fonts/557f817d-9c25-4a23-baaf-a3cf84a7cd7c.woff") format("woff"),url("../assets/fonts/92ed1479-1d40-4a94-8baf-6abd88b17afa.ttf") format("truetype");
+    }
+
+body {
+    margin: 0;
+    background-color: #111;
+    font-family: 'DINRegular', Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'DINLight', Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    margin: 0;
+}
+
+section {
+    box-sizing: border-box;
+    padding: 62px;
+}
+
+.navigation {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.5s;
+    z-index: 1;
+}
+
+/* Logo */
+
+#logo {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    width: 30px;
+    height: 30px;
+    background: #111;
+    z-index: 1;
+}
+
+/* Side Nav */
+
+#navMenuIcon {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size:30px;
+    line-height: 30px;
+    cursor:pointer;
+    z-index: 1;
+    transition: top 0.75s;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 2;
+}
+
+.sidenav .sectTitle {
+    padding: 8px 8px 8px 16px;
+    font-size: 25px;
+    color: white;
+    display: block;
+}
+
+.sidenav .projectLink {
+    width: 250px;
+    padding: 8px 8px 8px 16px;
+    text-decoration: none;
+    font-family: 'DINLight', Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    padding: 0;
+    top: 5px;
+    right: 16px;
+    font-size: 49px;
+    line-height: 49px;
+    text-decoration: none;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+#main {
+    box-sizing: border-box;
+    transition: .5s;
+    z-index: 0;
+}
+
+/* Project Section */
+
+.projectSections {
+    width: 100%;
+    height: 100vh;
+}
+
+.projectTitle {
+    position: relative;
+    font-size: 48px;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.projectSubTitle {
+    padding: 0 24px;
+    position: relative;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media only screen and (max-width: 480px) {
+    .projectTitle {
+        font-size: 36px;
+        line-height: 72px;
+    }
+}

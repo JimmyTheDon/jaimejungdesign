@@ -1,0 +1,36 @@
+<a href="#home"><div id="logo"></div></a>
+<span id="navMenuIcon" onclick="openNav()">&#9776;</span>
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <span class="sectTitle">Projects</span>
+    <a class="projectLink" href="#agrarian-village">AGRARIAN VILLAGE</a>
+    <a class="projectLink" href="#matrix">MATRIX</a>
+    <a class="projectLink" href="#vitreous">VITREO.US</a>
+    <a class="projectLink" href="#amalgamation">AMALGAMATION</a>
+    <a class="projectLink" href="#symbiosis">SYMBIOSIS</a>
+    <a class="projectLink" href="#park-hill-hotel">PARK HILL HOTEL</a>
+    <span class="sectTitle">Skills</span>
+    <a class="projectLink" href="#casa-negro">CASA NEGRO</a>
+    <a class="projectLink" href="#painting-drawing">PAINTINGS & DRAWINGS</a>
+    <span class="sectTitle">About</span>
+    <a class="projectLink" href="#casa-negro">RESUME</a>
+    <a class="projectLink" href="#painting-drawing">WORK SAMPLE</a>
+</div>     
+<script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.transform = "translateX(-250px)";
+            document.getElementById("main").style.opacity = "0.4";
+            document.body.style.overflowY = "hidden";
+        }
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.transform= "translateX(0px)";
+            document.getElementById("main").style.opacity = "1";
+            document.body.style.overflowY = "auto";
+        }
+        var projectLinks = document.getElementsByClassName("projectLink");
+        for(var i=0; i<projectLinks.length; i++) { 
+            projectLinks[i].addEventListener("click", closeNav);
+        }
+</script>    
