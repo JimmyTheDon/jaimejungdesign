@@ -44,6 +44,17 @@ section {
 
 /* Logo */
 
+#wordmark {
+    position: absolute;
+    display: inline-block;
+    line-height: 62px;
+    top: 62px;
+    left: 62px;
+    transform-origin: 0% 0%;
+    transform: rotate(90deg);
+    transition: all 0.5s;
+}
+
 #logo {
     position: absolute;
     top: 16px;
@@ -52,7 +63,12 @@ section {
     height: 30px;
     background: #111;
     z-index: 1;
+    transition: all 0.5s;
 }
+
+/* .navigation a:hover ~ #wordmark {
+    transform: translateY(0px);
+} */
 
 /* Side Nav */
 
@@ -64,7 +80,7 @@ section {
     line-height: 30px;
     cursor:pointer;
     z-index: 1;
-    transition: top 0.75s;
+    transition: top 0.5s;
 }
 
 .sidenav {
@@ -97,7 +113,7 @@ section {
     font-size: 18px;
     color: #818181;
     display: block;
-    transition: 0.3s;
+    transition: 0.5s;
 }
 
 .sidenav a:hover {
@@ -114,7 +130,7 @@ section {
     text-decoration: none;
     color: #818181;
     display: block;
-    transition: 0.3s;
+    transition: 0.5s;
 }
 
 #main {
@@ -126,8 +142,29 @@ section {
 /* Project Section */
 
 .projectSections {
-    width: 100%;
+    perspective: 1px;
     height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.parallaxLayer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.projectForeground {
+    transform: translateZ(0);
+}
+
+.projectBackground {
+    background-image: url(https://img.sunset02.com/sites/default/files/styles/marquee_large_2x/public/image/2017/04/main/el-capitan-getty-0517.jpg?itok=vuJS4hXh);
+    transform: translateZ(-2px) scale(3);
 }
 
 .projectTitle {
@@ -135,7 +172,7 @@ section {
     font-size: 48px;
     text-align: center;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translate(0, -200%);
 }
 
 .projectSubTitle {
@@ -145,12 +182,38 @@ section {
     line-height: 24px;
     text-align: center;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translate(0, -200%);
+}
+
+.buttonLinks {
+    width: 200px;
+    text-align: center;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px #111 solid;
+    color: #111;
+    text-decoration: none;
+    transition: all 0.5s;
+    position: relative;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.buttonLinks:hover {
+    background: #111;
+    color: white;
+    border-color: white;
 }
 
 @media only screen and (max-width: 480px) {
     .projectTitle {
         font-size: 36px;
-        line-height: 72px;
+        padding-bottom: 24px;
+        transform: translate(0, -100%);
+    }
+    .projectSubTitle {
+        transform: translate(0, -100%);
     }
 }
