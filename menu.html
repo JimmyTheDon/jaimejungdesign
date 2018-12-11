@@ -18,24 +18,29 @@
     <a class="projectLink" href="#painting-drawing">WORK SAMPLE</a>
 </div>     
 <script>
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-            document.getElementById("main").style.transform = "translateX(-150px)";
-            document.getElementById("logo").style.transform = "translateX(-150px)";
-            document.getElementById("wordmark").style.left = "-88px";
-            document.getElementById("main").style.opacity = "0.4";
-            document.body.style.overflowY = "hidden";
+    var parallaxMirror = document.getElementsByClassName("parallax-mirror");
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.transform = "translateX(-150px)";
+        document.getElementById("logo").style.transform = "translateX(-150px)";
+        document.getElementById("wordmark").style.left = "-88px";
+        for(var i=0; i<parallaxMirror.length; i++) { 
+            parallaxMirror[i].style.left = "-150px";
         }
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.transform= "translateX(0px)";
-            document.getElementById("logo").style.transform= "translateX(0px)";
-            document.getElementById("wordmark").style.left = "62px";
-            document.getElementById("main").style.opacity = "1";
-            document.body.style.overflowY = "auto";
+        document.body.style.overflowY = "hidden";
+    }
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.transform= "translateX(0px)";
+        document.getElementById("logo").style.transform= "translateX(0px)";
+        document.getElementById("wordmark").style.left = "62px";
+        for(var i=0; i<parallaxMirror.length; i++) { 
+            parallaxMirror[i].style.left = "0px";
         }
-        var projectLinks = document.getElementsByClassName("projectLink");
-        for(var i=0; i<projectLinks.length; i++) { 
-            projectLinks[i].addEventListener("click", closeNav);
-        }
+        document.body.style.overflowY = "auto";
+    }
+    var projectLinks = document.getElementsByClassName("projectLink");
+    for(var i=0; i<projectLinks.length; i++) { 
+        projectLinks[i].addEventListener("click", closeNav);
+    }
 </script>    
