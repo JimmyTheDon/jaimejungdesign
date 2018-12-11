@@ -130,7 +130,7 @@ section {
 
 #main {
     box-sizing: border-box;
-    transition: .5s;
+    transition: all .5s;
     z-index: 0;
 }
 
@@ -212,12 +212,12 @@ section {
     width: 100%;
     min-height: 100%;
     background: transparent;
-    opacity: 0.75;
+    opacity: 1;
 }
 
 .parallax-mirror {
-    transition: left 0.5s;
-    opacity: 0.75;
+    transition: left 0.5s, opacity 0.5s;
+    opacity: 1;
 }
 
 .container section .content {
