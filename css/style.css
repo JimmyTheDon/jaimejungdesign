@@ -29,7 +29,6 @@ h1, h2, h3 {
 
 section {
     box-sizing: border-box;
-    padding: 62px;
 }
 
 .navigation {
@@ -65,10 +64,6 @@ section {
     z-index: 1;
     transition: all 0.5s;
 }
-
-/* .navigation a:hover ~ #wordmark {
-    transform: translateY(0px);
-} */
 
 /* Side Nav */
 
@@ -141,38 +136,10 @@ section {
 
 /* Project Section */
 
-.projectSections {
-    perspective: 1px;
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-    position: relative;
-    transform-style: preserve-3d;
-}
-
-.parallaxLayer {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
-.projectForeground {
-    transform: translateZ(0);
-}
-
-.projectBackground {
-    background-image: url(https://img.sunset02.com/sites/default/files/styles/marquee_large_2x/public/image/2017/04/main/el-capitan-getty-0517.jpg?itok=vuJS4hXh);
-    transform: translateZ(-2px) scale(3);
-}
-
 .projectTitle {
     position: relative;
     font-size: 48px;
     text-align: center;
-    top: 50%;
-    transform: translate(0, -200%);
 }
 
 .projectSubTitle {
@@ -181,8 +148,7 @@ section {
     font-size: 18px;
     line-height: 24px;
     text-align: center;
-    top: 50%;
-    transform: translate(0, -200%);
+    margin: 24px 0;
 }
 
 .buttonLinks {
@@ -196,7 +162,6 @@ section {
     transition: all 0.5s;
     position: relative;
     display: block;
-    top: 50%;
     left: 50%;
     transform: translate(-50%, 0);
 }
@@ -207,13 +172,76 @@ section {
     border-color: white;
 }
 
+.projectSections {
+    width: 100%;
+    height: 100vh;
+    padding: 62px;
+}
+
+.projectSections > * {
+    margin: 1em auto;
+    max-width: 742px;
+}
+
+.projectSections > h2 {
+    font-size: 24px;
+}
+
+.projectSections > p {
+    font-size: 1.25em;
+    line-height: 1.5em;
+
+}
+
+/* Parallax */
+
+.container {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: space-around;
+    position: relative;
+    width: 100%;
+}
+.container section {
+    width: 100%;
+    height: 100vh;
+    flex: 1;
+    display: flex;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.container section .image {
+    background-image: url(https://images.unsplash.com/photo-1463412855783-af97e375664b?iq=100&fm=jpg&w=1000);
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0.75;
+}
+
+.container section .stuff {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    width: 100%;
+    max-width: 70%;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+}
+
 @media only screen and (max-width: 480px) {
     .projectTitle {
         font-size: 36px;
-        padding-bottom: 24px;
-        transform: translate(0, -100%);
-    }
-    .projectSubTitle {
-        transform: translate(0, -100%);
     }
 }
